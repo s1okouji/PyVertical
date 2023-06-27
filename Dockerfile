@@ -8,6 +8,8 @@ WORKDIR /pyvertical
 
 # Setup environment
 RUN pip install -r requirements.txt --no-cache-dir
+# Downgrade Protobuf
+RUN pip install -U protobuf~=3.20.0
 RUN pip install jupyterlab
 
 # Expose port for jupyter lab
